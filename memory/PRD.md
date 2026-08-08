@@ -1,0 +1,41 @@
+# Duodecimal — Enterprise Website PRD
+
+## Original Problem Statement
+"Build a landing page: I want to build a enterprise website for an software development like uniisys, for my company duodecimal."
+
+## User Choices
+- Full enterprise site: Hero, Services, Industries, About, Case Studies, Testimonials, Contact form
+- Services: Custom software, web & mobile apps, cloud, AI/ML, UI/UX, consulting
+- Contact form: save to database + admin view
+- Design: light, clean corporate (executed as Swiss/high-contrast "base-12" architectural aesthetic per design_guidelines.json)
+
+## Architecture
+- Frontend: React 19 + Tailwind + framer-motion (kinetic masked hero reveal, scroll reveals, parallax) + lenis (momentum scrolling) + react-fast-marquee + sonner toasts
+- Backend: FastAPI + motor (MongoDB), JWT admin auth (bcrypt, brute-force lockout), enquiries CRUD
+- Routes: `/` (landing), `/admin/login`, `/admin` (enquiries dashboard)
+- API: POST /api/enquiries (public), GET /api/enquiries (admin), POST /api/auth/login, GET /api/auth/me, POST /api/auth/logout
+
+## User Personas
+- Enterprise buyer (CTO/VP Eng) evaluating a software consultancy
+- Duodecimal admin reviewing inbound enquiries
+
+## Implemented (2026-08-08)
+- Kinetic hero with masked line-by-line reveal, parallax architectural image, floating uptime stat, stats band
+- Slow editorial marquee of capabilities
+- Services bento grid (12-col, 6 disciplines, hover-invert cards)
+- Industries accordion (6 domains)
+- Numbered manifesto About section (01 Precision / 02 Partnership / 03 Proof)
+- Case studies (dark section, 3 client stories with metrics)
+- Testimonials (3 client quotes with portraits)
+- Contact form saving enquiries to MongoDB with success/error toasts
+- Admin login (JWT) + enquiries dashboard with count, refresh, sign out
+- Admin seeding from env, credentials in /app/memory/test_credentials.md
+
+## Verified
+- curl: enquiry create, login, protected list, 401 unauthorized
+- e2e screenshot: form submit -> toast -> admin login -> enquiry visible in table
+
+## Backlog
+- P0: none
+- P1: Email notification on new enquiry (Resend), case study detail pages, careers page
+- P2: Blog/insights, multi-language, analytics, CMS-editable content
