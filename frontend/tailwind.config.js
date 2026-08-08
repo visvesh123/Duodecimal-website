@@ -12,7 +12,8 @@ module.exports = {
         sans: ['"IBM Plex Sans"', 'sans-serif'],
       },
       colors: {
-        brand: '#0055FF',
+        brand: '#2E4BFF',
+        brandlight: '#6B85FF',
         ink: '#0A0A0A',
         paper: '#F8FAFC',
         line: '#E2E8F0',

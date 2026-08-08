@@ -18,13 +18,13 @@
         --secondary-foreground: 0 0% 9%;
         --muted: 210 40% 96.1%;
         --muted-foreground: 215 16% 47%;
-        --accent: 221 100% 50%;
+        --accent: 232 100% 59%;
         --accent-foreground: 0 0% 100%;
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 0 0% 98%;
         --border: 214 32% 91%;
         --input: 214 32% 91%;
-        --ring: 221 100% 50%;
+        --ring: 232 100% 59%;
         --chart-1: 12 76% 61%;
         --chart-2: 173 58% 39%;
         --chart-3: 197 37% 24%;
@@ -59,7 +59,7 @@ html.lenis body {
 }
 
 ::selection {
-    background: #0055ff;
+    background: #2e4bff;
     color: #ffffff;
 }
 

@@ -35,6 +35,9 @@
 - curl: enquiry create, login, protected list, 401 unauthorized
 - e2e screenshot: form submit -> toast -> admin login -> enquiry visible in table
 
+## Updates (2026-08-08)
+- Palette aligned to real brand at duodecimal.in: royal blue #2E4BFF accent (logo periwinkle #6B85FF noted), black/white base. Brand fonts on duodecimal.in are Oswald/Poppins/Anton (current build keeps Outfit/IBM Plex Sans — can switch on request)
+
 ## Backlog
 - P0: none
 - P1: Email notification on new enquiry (Resend), case study detail pages, careers page
