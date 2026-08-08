@@ -1,0 +1,113 @@
+{
+  "project_name": "Duodecimal Enterprise Landing Page",
+  "theme": "light",
+  "typography": {
+    "headings": "Outfit",
+    "body": "IBM Plex Sans",
+    "instructions": "Install via standard imports. Headings must have tight tracking (-0.02em to -0.04em). Never use Inter for headings. Use varying font weights (e.g., font-light vs font-black) to create tension."
+  },
+  "colors": {
+    "background": "#FFFFFF",
+    "foreground": "#0A0A0A",
+    "primary": "#0A0A0A",
+    "secondary": "#F8FAFC",
+    "accent": "#0055FF",
+    "muted": "#F1F5F9",
+    "border": "#E2E8F0"
+  },
+  "visual_enhancers": {
+    "border_radius": "0px or maximum 4px for a sharp, architectural enterprise feel.",
+    "shadows": "Minimal. Use crisp 1px borders (border-border) instead of soft shadows. For interactive elements, use sharp, offset architectural shadows.",
+    "textures": "Subtle, clean aesthetics. Let the typography and grid create the texture."
+  },
+  "layouts": {
+    "general": "Optical alignment over geometrical. Use very generous spacing (py-24, py-32). Implement a 12-column grid system globally to reflect the 'Duodecimal' (base-12) brand identity.",
+    "hero": "Kinetic large typography, max width containers, min-h-[90vh]. Include a subtle parallax image/3D abstract on the right or as a background overlay.",
+    "services": "Dense, architectural Bento grid (grid-cols-1 md:grid-cols-12) where items span 3, 4, or 6 columns. Use 1px borders separating items. Sharp edges.",
+    "about": "Numbered manifesto style ('01', '02'). Text heavy, huge font sizes for key statements.",
+    "industries": "Vertical accordions or overlapping architectural cards.",
+    "marquee": "Slow editorial marquee. Low contrast (e.g., #F8FAFC bg, #64748B text), wide spacing (gap-32) between items. Use react-fast-marquee.",
+    "admin": "Shadcn-based dense layout, minimal styling, focused on data clarity."
+  },
+  "motion": {
+    "hero_reveal": "Masked line-by-line text reveal. Wrap text in div with overflow-hidden, animate inner text from y: 100% to 0 using framer-motion with an easeOut cubic-bezier.",
+    "scrolling": "Install and configure @studio-freight/lenis (or lenis) for momentum scrolling across the marketing pages.",
+    "scroll_reveals": "Framer motion whileInView triggers. Fade + slight Y translation (30px) on scroll.",
+    "parallax": "Use framer-motion useScroll and useTransform for a slow Y-axis translation on the hero image."
+  },
+  "components_to_use": [
+    "Shadcn Form, Input, Textarea, Button (Contact Form)",
+    "Shadcn Table, Card, Badge, DropdownMenu (Admin Enquiries)",
+    "react-fast-marquee (editorial marquee)",
+    "framer-motion (kinetic typography and scroll reveals)",
+    "lucide-react (standard icons)"
+  ],
+  "image_urls": {
+    "hero_abstract": [
+      {
+        "url": "https://images.pexels.com/photos/20697911/pexels-photo-20697911.png",
+        "description": "Abstract architectural glass, reflecting modern enterprise."
+      },
+      {
+        "url": "https://images.pexels.com/photos/21418687/pexels-photo-21418687.jpeg",
+        "description": "Intricate glass and steel reflection."
+      }
+    ],
+    "about_office": [
+      {
+        "url": "https://images.unsplash.com/photo-1718220216044-006f43e3a9b1",
+        "description": "Minimalist tech office."
+      }
+    ],
+    "services_abstract": [
+      {
+        "url": "https://images.pexels.com/photos/25630348/pexels-photo-25630348.jpeg",
+        "description": "Geometric modern abstract for Cloud/AI service."
+      },
+      {
+        "url": "https://images.pexels.com/photos/411011/sun-energy-solar-electricity-411011.jpeg",
+        "description": "Monochrome texture for Custom Software service."
+      }
+    ],
+    "testimonials": [
+      {
+        "url": "https://images.pexels.com/photos/27086922/pexels-photo-27086922.jpeg",
+        "description": "Smiling woman in formal suit."
+      },
+      {
+        "url": "https://images.pexels.com/photos/9623645/pexels-photo-9623645.jpeg",
+        "description": "Confident businessman outside."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1581065178047-8ee15951ede6",
+        "description": "Woman in black blazer."
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Execute all UI/UX rules from E1.",
+    "Do NOT use standard rounded cards for the marketing site. Use sharp corners (0px or 4px max) to achieve the 'Unisys/Duodecimal' enterprise architecture feel.",
+    "Implement a globally available sticky navigation with glassmorphism (backdrop-blur-xl bg-white/70) that features a sharp 1px bottom border. DO NOT use complete transparent background in header.",
+    "For the hero section, use Framer Motion to create a kinetic, masked line-by-line text reveal. The text must come up from below an invisible mask.",
+    "Use lenis for smooth scrolling. Wrap the main App or marketing pages in a Lenis provider.",
+    "Implement an editorial marquee using react-fast-marquee. It must be slow, large outline text or subtle serif text, breaking up sections.",
+    "Build an Admin View (e.g. /admin route or a toggle) using Shadcn components (Table, Data Table) to view mocked form enquiries.",
+    "Store contact form submissions in local state or a mocked DB array, and render them in the Admin view.",
+    "Add data-testid attributes to all form inputs, buttons, and critical UI elements.",
+    "Use sharp, thin borders (border-slate-200) to create a 'blueprint/grid' aesthetic across the Services and Industries sections.",
+    "DO NOT center-align paragraphs. Keep text left-aligned for maximum readability.",
+    "Ensure the hero has a subtle parallax effect on the image."
+  ],
+  "universal_guidelines": [
+    "Never use generic centered layouts or simplistic gradients.",
+    "Create depth through z-index and architectural borders rather than drop shadows.",
+    "Do not apply global transitions (e.g., transition: all).",
+    "Never use AI emoji characters.",
+    "All interactive elements must have hover and focus states with sufficient contrast.",
+    "Prioritize optical alignment over geometric alignment."
+  ],
+  "accessibility": {
+    "contrast": "Ensure text meets APCA standards. Minimum 4.5:1 ratio for normal text.",
+    "reduced_motion": "Respect prefers-reduced-motion CSS media query."
+  }
+}
