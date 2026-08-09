@@ -27,7 +27,7 @@ export const About = () => (
             <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
               <span className="h-px w-10 bg-brand" /> The Manifesto
             </p>
-            <h2 className="font-display text-4xl font-bold leading-[1.02] tracking-[-0.03em] text-ink sm:text-5xl lg:text-6xl">
+            <h2 className="font-display text-4xl font-bold leading-[1.02] tracking-[-0.01em] text-ink sm:text-5xl lg:text-6xl">
               We think in
               <br />
               <span className="text-brand">twelves.</span>

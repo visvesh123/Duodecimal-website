@@ -54,7 +54,7 @@ export const Contact = () => {
             <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
               <span className="h-px w-10 bg-brand" /> Contact
             </p>
-            <h2 className="font-display text-4xl font-bold leading-[1.02] tracking-[-0.03em] text-ink sm:text-5xl lg:text-6xl">
+            <h2 className="font-display text-4xl font-bold leading-[1.02] tracking-[-0.01em] text-ink sm:text-5xl lg:text-6xl">
               Let's build something that lasts.
             </h2>
             <p className="mt-8 max-w-md text-base leading-relaxed text-slate-600">

@@ -37,7 +37,7 @@ export const Hero = () => {
             Software Development Consultancy
           </motion.p>
 
-          <h1 className="font-display text-5xl font-bold leading-[0.98] tracking-[-0.03em] text-ink sm:text-6xl lg:text-7xl xl:text-[5.5rem]">
+          <h1 className="font-display text-5xl font-bold leading-[0.98] tracking-[-0.01em] text-ink sm:text-6xl lg:text-7xl xl:text-[5.5rem]">
             <MaskedLine delay={0.15}>Enterprise software,</MaskedLine>
             <MaskedLine delay={0.3}>engineered in</MaskedLine>
             <MaskedLine delay={0.45} className="text-brand">

@@ -36,7 +36,8 @@
 - e2e screenshot: form submit -> toast -> admin login -> enquiry visible in table
 
 ## Updates (2026-08-08)
-- Palette aligned to real brand at duodecimal.in: royal blue #2E4BFF accent (logo periwinkle #6B85FF noted), black/white base. Brand fonts on duodecimal.in are Oswald/Poppins/Anton (current build keeps Outfit/IBM Plex Sans — can switch on request)
+- Palette aligned to real brand at duodecimal.in: royal blue #2E4BFF accent (logo periwinkle #6B85FF noted), black/white base
+- Typography switched to brand fonts: Oswald (headings) + Poppins (body), heading tracking relaxed for Oswald's condensed cut
 
 ## Backlog
 - P0: none

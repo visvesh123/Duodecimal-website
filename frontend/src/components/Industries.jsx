@@ -52,7 +52,7 @@ export const Industries = () => {
           <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
             <span className="h-px w-10 bg-brand" /> Industries
           </p>
-          <h2 className="max-w-3xl font-display text-4xl font-bold tracking-[-0.03em] text-ink sm:text-5xl lg:text-6xl">
+          <h2 className="max-w-3xl font-display text-4xl font-bold tracking-[-0.01em] text-ink sm:text-5xl lg:text-6xl">
             Deep in the domains that run the world.
           </h2>
         </Reveal>
