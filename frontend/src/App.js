@@ -5,6 +5,8 @@ import Lenis from "lenis";
 import { Toaster } from "@/components/ui/sonner";
 import Home from "@/pages/Home";
 import IndustryPage from "@/pages/IndustryPage";
+import Clients from "@/pages/Clients";
+import ClientStory from "@/pages/ClientStory";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import AdminLogin from "@/pages/AdminLogin";
@@ -33,6 +35,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/industries/:slug" element={<IndustryPage />} />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/clients/:slug" element={<ClientStory />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/admin/login" element={<AdminLogin />} />

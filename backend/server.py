@@ -80,6 +80,22 @@ class HappeningCreate(BaseModel):
     link: Optional[str] = ""
 
 
+class StoryCreate(BaseModel):
+    client: str = Field(min_length=1, max_length=120)
+    industry: Optional[str] = ""
+    title: str = Field(min_length=1, max_length=200)
+    excerpt: Optional[str] = ""
+    challenge: Optional[str] = ""
+    solution: Optional[str] = ""
+    results: Optional[List[str]] = []
+    quote: Optional[str] = ""
+    quote_author: Optional[str] = ""
+    quote_role: Optional[str] = ""
+    metric: Optional[str] = ""
+    metric_label: Optional[str] = ""
+    cover: Optional[str] = ""
+
+
 def slugify(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-") or "post"
 
@@ -263,6 +279,130 @@ async def delete_happening(happening_id: str, admin=Depends(get_current_admin)):
     return {"message": "Deleted"}
 
 
+@api_router.get("/stories")
+async def list_stories():
+    return await db.stories.find({}, {"_id": 0}).sort("created_at", -1).to_list(100)
+
+
+@api_router.get("/stories/{slug}")
+async def get_story(slug: str):
+    story = await db.stories.find_one({"slug": slug}, {"_id": 0})
+    if not story:
+        raise HTTPException(status_code=404, detail="Story not found")
+    return story
+
+
+@api_router.post("/stories", status_code=201)
+async def create_story(input: StoryCreate, admin=Depends(get_current_admin)):
+    base = slugify(input.client)
+    slug = base
+    i = 2
+    while await db.stories.find_one({"slug": slug}):
+        slug = f"{base}-{i}"
+        i += 1
+    doc = {
+        "id": str(uuid.uuid4()),
+        "slug": slug,
+        "client": input.client.strip(),
+        "industry": (input.industry or "").strip(),
+        "title": input.title.strip(),
+        "excerpt": (input.excerpt or "").strip(),
+        "challenge": (input.challenge or "").strip(),
+        "solution": (input.solution or "").strip(),
+        "results": input.results or [],
+        "quote": (input.quote or "").strip(),
+        "quote_author": (input.quote_author or "").strip(),
+        "quote_role": (input.quote_role or "").strip(),
+        "metric": (input.metric or "").strip(),
+        "metric_label": (input.metric_label or "").strip(),
+        "cover": (input.cover or "").strip(),
+        "created_at": datetime.now(timezone.utc).isoformat(),
+    }
+    await db.stories.insert_one(doc)
+    return {"id": doc["id"], "slug": slug}
+
+
+@api_router.delete("/stories/{story_id}")
+async def delete_story(story_id: str, admin=Depends(get_current_admin)):
+    await db.stories.delete_one({"id": story_id})
+    return {"message": "Deleted"}
+
+
+def _sample_stories():
+    now = datetime.now(timezone.utc).isoformat()
+    return [
+        {
+            "id": str(uuid.uuid4()),
+            "slug": "meridian-bank",
+            "client": "Meridian Bank",
+            "industry": "Fintech & Banking",
+            "title": "Core banking modernization without a minute of downtime",
+            "excerpt": "Re-platformed a 20-year-old core banking stack into event-driven microservices while the bank kept serving customers.",
+            "challenge": "Meridian's core banking platform had been running for two decades. Every new product launch took quarters, release windows were dreaded, and the board wanted digital-first growth that the legacy stack simply could not support. The catch: the bank serves millions of customers daily, so a big-bang migration was never an option.",
+            "solution": "Duodecimal re-platformed the core incrementally using a strangler pattern — building event-driven microservices around the legacy core and migrating capability by capability, account by account. DD Ledger powered the new double-entry core, with automated reconciliation running in parallel against the legacy system for every release.",
+            "results": [
+                "38% faster release cycles — from quarterly releases to weekly deploys",
+                "Zero minutes of customer-facing downtime across the entire migration",
+                "New product launch time cut from months to weeks",
+                "Full audit trail and reconciliation on every migrated account",
+            ],
+            "quote": "Duodecimal rebuilt our core platform while the plane was in the air. Not one minute of downtime, not one missed milestone in eighteen months.",
+            "quote_author": "Elena Marsh",
+            "quote_role": "CTO, Meridian Bank",
+            "metric": "38%",
+            "metric_label": "faster release cycles",
+            "cover": "https://images.pexels.com/photos/21418687/pexels-photo-21418687.jpeg?auto=compress&cs=tinysrgb&w=1200",
+            "created_at": now,
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "slug": "northwind-health",
+            "client": "Northwind Health",
+            "industry": "Healthcare & Life Sciences",
+            "title": "One patient platform for 140 clinics",
+            "excerpt": "Designed and built a unified patient platform spanning 140 clinics — appointments, records and telehealth in one experience.",
+            "challenge": "Northwind's 140 clinics each ran their own scheduling, records and billing systems. Patients repeated their history at every visit, staff juggled five logins a day, and leadership had no unified view of care quality or capacity across the network.",
+            "solution": "Duodecimal built DD Care as the network's single patient platform — one experience for appointments, records, reminders and telehealth — with DD Bridge, a FHIR-native interoperability layer, synchronizing data from every clinic's existing systems without ripping them out.",
+            "results": [
+                "2.4M patients onboarded onto a single platform",
+                "140 clinics connected through one FHIR-native data layer",
+                "Patient check-in time reduced by half",
+                "First unified view of capacity and outcomes across the network",
+            ],
+            "quote": "The engineering rigor is unmatched. Every deliverable arrived documented, tested and measured against the outcomes we agreed on day one.",
+            "quote_author": "Priya Raman",
+            "quote_role": "VP Product, Northwind Health",
+            "metric": "2.4M",
+            "metric_label": "patients onboarded",
+            "cover": "https://images.pexels.com/photos/25630348/pexels-photo-25630348.jpeg?auto=compress&cs=tinysrgb&w=1200",
+            "created_at": now,
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "slug": "atlas-freight",
+            "client": "Atlas Freight",
+            "industry": "Logistics & Supply Chain",
+            "title": "Real-time visibility for 12,000 vehicles across 24 countries",
+            "excerpt": "Real-time telemetry for 12,000 vehicles with ML-driven ETA prediction that cut missed delivery windows by half.",
+            "challenge": "Atlas Freight operated across 24 countries with no live picture of its fleet. Dispatchers planned on spreadsheets, customers called for updates nobody could give, and missed delivery windows were eroding the contracts that mattered most.",
+            "solution": "Duodecimal deployed DD Fleet for real-time telematics across all 12,000 vehicles and DD Route for continuous, constraint-aware route optimization. ML arrival prediction, trained on Atlas's own network history, feeds customers ETAs they can actually trust.",
+            "results": [
+                "99.99% platform uptime since launch",
+                "Missed delivery windows cut by 50%",
+                "12,000 vehicles streaming live telemetry across 24 countries",
+                "Dispatch planning time reduced from hours to minutes",
+            ],
+            "quote": "They are the rare partner that tells you what you need to hear, not what you want to hear. Our board now asks for them by name.",
+            "quote_author": "David Okafor",
+            "quote_role": "CEO, Atlas Freight",
+            "metric": "99.99%",
+            "metric_label": "platform uptime",
+            "cover": "https://images.pexels.com/photos/411011/sun-energy-solar-electricity-411011.jpeg?auto=compress&cs=tinysrgb&w=1200",
+            "created_at": now,
+        },
+    ]
+
+
 def _sample_posts():
     now = datetime.now(timezone.utc).isoformat()
     return [
@@ -356,6 +496,8 @@ async def startup():
         await db.posts.insert_many(_sample_posts())
     if await db.happenings.count_documents({}) == 0:
         await db.happenings.insert_many(_sample_happenings())
+    if await db.stories.count_documents({}) == 0:
+        await db.stories.insert_many(_sample_stories())
 
 
 app.include_router(api_router)

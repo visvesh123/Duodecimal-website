@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { LogOut, RefreshCw, Inbox } from "lucide-react";
-import { BlogManager, HappeningsManager } from "@/components/AdminCMS";
+import { BlogManager, HappeningsManager, StoryManager } from "@/components/AdminCMS";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -82,6 +82,7 @@ export default function Admin() {
         <div className="mx-auto flex max-w-[1440px] gap-1 px-6 lg:px-12">
           {[
             ["enquiries", "Enquiries"],
+            ["stories", "Client stories"],
             ["blog", "Blog articles"],
             ["happenings", "Happenings"],
           ].map(([k, l]) => (
@@ -156,6 +157,7 @@ export default function Admin() {
         )}
         </>
         )}
+        {tab === "stories" && <StoryManager />}
         {tab === "blog" && <BlogManager />}
         {tab === "happenings" && <HappeningsManager />}
       </div>

@@ -43,7 +43,8 @@
 - Products per industry page (DD Pay, DD Risk, DD Ledger, DD Care, DD Bridge, DD Commerce, DD Stock, DD Fleet, DD Route, DD Twin, DD Sense, DD Meter, DD Tenant — placeholder names/details for user to replace)
 - Blog: /blog list + /blog/:slug article pages; posts stored in MongoDB; 3 sample articles seeded; public GET /api/posts, /api/posts/{slug}; admin POST/DELETE
 - Happenings section on homepage (company news/LinkedIn-linked updates); happenings stored in MongoDB; 3 samples seeded; public GET /api/happenings; admin POST/DELETE
-- Admin dashboard now has tabs: Enquiries | Blog articles | Happenings, with publish + delete forms for blog and happenings
+- Admin dashboard now has tabs: Enquiries | Client stories | Blog articles | Happenings, with publish + delete forms
+- Client stories (Unisys-style): /clients list + /clients/:slug detail pages with facts box, business challenge, solution, results & benefits checklist, client quote band and CTA; stories in MongoDB, 3 samples seeded (Meridian Bank, Northwind Health, Atlas Freight); public GET /api/stories, /api/stories/{slug}; admin POST/DELETE; homepage Work section renders from API and links to story pages
 
 ## Backlog
 - P0: none
