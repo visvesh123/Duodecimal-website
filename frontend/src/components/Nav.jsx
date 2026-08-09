@@ -30,14 +30,9 @@ export const Nav = () => {
         <button
           data-testid="nav-logo"
           onClick={() => window.__lenis?.scrollTo(0)}
-          className="flex items-center gap-3"
+          className="flex items-center"
         >
-          <span className="flex h-8 w-8 items-center justify-center bg-ink font-display text-sm font-bold text-white">
-            12
-          </span>
-          <span className="font-display text-lg font-bold tracking-tight text-ink">
-            DUODECIMAL
-          </span>
+          <img src="/logo.png" alt="Duodecimal" className="h-7 w-auto" />
         </button>
 
         <nav className="hidden items-center gap-10 lg:flex">

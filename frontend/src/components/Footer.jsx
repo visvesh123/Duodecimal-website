@@ -5,13 +5,8 @@ export const Footer = () => (
     <div className="mx-auto max-w-[1440px] px-6 py-16 lg:px-12">
       <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
         <div className="md:col-span-6">
-          <div className="flex items-center gap-3">
-            <span className="flex h-8 w-8 items-center justify-center bg-ink font-display text-sm font-bold text-white">
-              12
-            </span>
-            <span className="font-display text-lg font-bold tracking-tight text-ink">
-              DUODECIMAL
-            </span>
+          <div className="flex items-center">
+            <img src="/logo.png" alt="Duodecimal" className="h-7 w-auto" />
           </div>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-slate-600">
             Enterprise software, engineered in base twelve. London · Bengaluru ·

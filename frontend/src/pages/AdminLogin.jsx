@@ -38,13 +38,8 @@ export default function AdminLogin() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-paper px-6" data-testid="admin-login-page">
       <div className="w-full max-w-md border border-line bg-white p-10">
-        <div className="flex items-center gap-3">
-          <span className="flex h-8 w-8 items-center justify-center bg-ink font-display text-sm font-bold text-white">
-            12
-          </span>
-          <span className="font-display text-lg font-bold tracking-tight text-ink">
-            DUODECIMAL
-          </span>
+        <div className="flex items-center">
+          <img src="/logo.png" alt="Duodecimal" className="h-6 w-auto" />
         </div>
         <h1 className="mt-8 font-display text-2xl font-bold tracking-tight text-ink">
           Admin sign in

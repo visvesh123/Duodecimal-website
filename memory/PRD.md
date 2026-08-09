@@ -38,6 +38,7 @@
 ## Updates (2026-08-08)
 - Palette aligned to real brand at duodecimal.in: royal blue #2E4BFF accent (logo periwinkle #6B85FF noted), black/white base
 - Typography switched to brand fonts: Oswald (headings) + Poppins (body), heading tracking relaxed for Oswald's condensed cut
+- Real DU0DEC1MAL logo artwork (from duodecimal.in) saved to frontend/public/logo.png and used in nav, footer, admin login and admin dashboard, replacing the "12" placeholder
 
 ## Backlog
 - P0: none

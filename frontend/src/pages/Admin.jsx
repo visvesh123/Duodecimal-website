@@ -47,9 +47,7 @@ export default function Admin() {
       <header className="border-b border-line bg-white">
         <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-6 lg:px-12">
           <div className="flex items-center gap-3">
-            <span className="flex h-8 w-8 items-center justify-center bg-ink font-display text-sm font-bold text-white">
-              12
-            </span>
+            <img src="/logo.png" alt="Duodecimal" className="h-6 w-auto" />
             <span className="font-display text-lg font-bold tracking-tight text-ink">
               Enquiries
             </span>
