@@ -1,49 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus } from "lucide-react";
+import { Plus, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-
-const industries = [
-  {
-    n: "01",
-    title: "Fintech & Banking",
-    copy: "Core banking modernization, payment rails, fraud detection and regulatory-grade reporting systems built for zero-failure tolerance.",
-    tags: ["Payments", "Core banking", "RegTech"],
-  },
-  {
-    n: "02",
-    title: "Healthcare & Life Sciences",
-    copy: "HIPAA-conscious patient platforms, clinical workflow systems and interoperable data exchange across care networks.",
-    tags: ["Patient platforms", "HL7 / FHIR", "Clinical data"],
-  },
-  {
-    n: "03",
-    title: "Retail & E-Commerce",
-    copy: "Headless commerce, inventory intelligence and personalization engines that convert at enterprise scale.",
-    tags: ["Headless commerce", "OMS", "Personalization"],
-  },
-  {
-    n: "04",
-    title: "Logistics & Supply Chain",
-    copy: "Real-time fleet visibility, route optimization and warehouse automation platforms moving millions of shipments.",
-    tags: ["Fleet telematics", "WMS", "Route optimization"],
-  },
-  {
-    n: "05",
-    title: "Manufacturing & IoT",
-    copy: "Industrial IoT pipelines, digital twins and predictive maintenance systems for the factory floor.",
-    tags: ["Digital twins", "Edge computing", "Predictive maintenance"],
-  },
-  {
-    n: "06",
-    title: "SaaS & Platforms",
-    copy: "Multi-tenant architecture, usage-based billing and platform engineering for product companies scaling past product-market fit.",
-    tags: ["Multi-tenancy", "Billing", "Platform engineering"],
-  },
-];
+import { industries } from "@/data/industries";
 
 export const Industries = () => {
   const [open, setOpen] = useState(0);
+  const navigate = useNavigate();
 
   return (
     <section id="industries" className="border-t border-line bg-paper py-24 lg:py-32" data-testid="industries-section">
@@ -108,6 +72,18 @@ export const Industries = () => {
                                 {t}
                               </span>
                             ))}
+                          </div>
+                          <div className="md:col-span-2">
+                            <button
+                              data-testid={`industry-explore-${ind.n}`}
+                              onClick={() => navigate(`/industries/${ind.slug}`)}
+                              className="group/link flex items-center gap-2 text-sm font-semibold text-ink"
+                            >
+                              <span className="border-b border-ink pb-0.5 transition-colors duration-200 group-hover/link:border-brand group-hover/link:text-brand">
+                                Explore {ind.title}
+                              </span>
+                              <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                            </button>
                           </div>
                         </div>
                       </motion.div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const links = [
@@ -18,10 +19,21 @@ export const scrollToSection = (href) => {
 
 export const Nav = () => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const go = (href) => {
     setOpen(false);
-    scrollToSection(href);
+    if (location.pathname !== "/") {
+      navigate("/" + href);
+    } else {
+      scrollToSection(href);
+    }
+  };
+
+  const goHome = () => {
+    if (location.pathname !== "/") navigate("/");
+    else window.__lenis?.scrollTo(0);
   };
 
   return (
@@ -29,7 +41,7 @@ export const Nav = () => {
       <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-6 lg:px-12">
         <button
           data-testid="nav-logo"
-          onClick={() => window.__lenis?.scrollTo(0)}
+          onClick={goHome}
           className="flex items-center"
         >
           <img src="/logo.png" alt="Duodecimal" className="h-10 w-auto" />

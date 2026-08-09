@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Lenis from "lenis";
 import { Toaster } from "@/components/ui/sonner";
 import Home from "@/pages/Home";
+import IndustryPage from "@/pages/IndustryPage";
 import AdminLogin from "@/pages/AdminLogin";
 import Admin from "@/pages/Admin";
 
@@ -29,6 +30,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/industries/:slug" element={<IndustryPage />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<Admin />} />
         </Routes>
