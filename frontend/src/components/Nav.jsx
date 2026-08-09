@@ -32,7 +32,7 @@ export const Nav = () => {
           onClick={() => window.__lenis?.scrollTo(0)}
           className="flex items-center"
         >
-          <img src="/logo.png" alt="Duodecimal" className="h-7 w-auto" />
+          <img src="/logo.png" alt="Duodecimal" className="h-10 w-auto" />
         </button>
 
         <nav className="hidden items-center gap-10 lg:flex">

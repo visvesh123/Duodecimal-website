@@ -6,7 +6,7 @@ export const Footer = () => (
       <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
         <div className="md:col-span-6">
           <div className="flex items-center">
-            <img src="/logo.png" alt="Duodecimal" className="h-7 w-auto" />
+            <img src="/logo.png" alt="Duodecimal" className="h-9 w-auto" />
           </div>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-slate-600">
             Enterprise software, engineered in base twelve. London · Bengaluru ·
