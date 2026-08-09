@@ -7,6 +7,7 @@ const links = [
   { label: "Industries", href: "#industries" },
   { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
+  { label: "Insights", href: "/blog" },
 ];
 
 export const scrollToSection = (href) => {
@@ -24,6 +25,10 @@ export const Nav = () => {
 
   const go = (href) => {
     setOpen(false);
+    if (href.startsWith("/")) {
+      navigate(href);
+      return;
+    }
     if (location.pathname !== "/") {
       navigate("/" + href);
     } else {

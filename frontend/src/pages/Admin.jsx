@@ -2,12 +2,14 @@ import { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { LogOut, RefreshCw, Inbox } from "lucide-react";
+import { BlogManager, HappeningsManager } from "@/components/AdminCMS";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 export default function Admin() {
   const [enquiries, setEnquiries] = useState(null);
   const [error, setError] = useState("");
+  const [tab, setTab] = useState("enquiries");
   const navigate = useNavigate();
 
   const load = useCallback(async () => {
@@ -76,7 +78,32 @@ export default function Admin() {
         </div>
       </header>
 
+      <div className="border-b border-line bg-white">
+        <div className="mx-auto flex max-w-[1440px] gap-1 px-6 lg:px-12">
+          {[
+            ["enquiries", "Enquiries"],
+            ["blog", "Blog articles"],
+            ["happenings", "Happenings"],
+          ].map(([k, l]) => (
+            <button
+              key={k}
+              data-testid={`admin-tab-${k}`}
+              onClick={() => setTab(k)}
+              className={`border-b-2 px-4 py-3 text-sm font-medium transition-colors duration-200 ${
+                tab === k
+                  ? "border-brand text-ink"
+                  : "border-transparent text-slate-500 hover:text-ink"
+              }`}
+            >
+              {l}
+            </button>
+          ))}
+        </div>
+      </div>
+
       <div className="mx-auto max-w-[1440px] px-6 py-10 lg:px-12">
+        {tab === "enquiries" && (
+        <>
         {error && (
           <p data-testid="admin-error" className="border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
             {error}
@@ -127,6 +154,10 @@ export default function Admin() {
             </table>
           </div>
         )}
+        </>
+        )}
+        {tab === "blog" && <BlogManager />}
+        {tab === "happenings" && <HappeningsManager />}
       </div>
     </main>
   );

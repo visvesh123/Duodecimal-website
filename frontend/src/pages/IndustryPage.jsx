@@ -143,6 +143,53 @@ export default function IndustryPage() {
         </div>
       </section>
 
+      {industry.products?.length > 0 && (
+        <section className="border-t border-line py-24 lg:py-32" data-testid="industry-products">
+          <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
+            <Reveal>
+              <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
+                <span className="h-px w-10 bg-brand" /> Our Products
+              </p>
+              <h2 className="max-w-3xl font-display text-4xl font-bold tracking-[-0.01em] text-ink sm:text-5xl">
+                Built by us, proven in {industry.title.toLowerCase()}.
+              </h2>
+            </Reveal>
+            <div className="mt-16 grid grid-cols-1 gap-px border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
+              {industry.products.map((p, i) => (
+                <Reveal key={p.name} delay={i * 0.06} className="bg-white">
+                  <div className="group flex h-full flex-col p-8 transition-colors duration-300 hover:bg-ink lg:p-10" data-testid={`industry-product-${i + 1}`}>
+                    <div className="flex items-center justify-between">
+                      <span className="border border-brand px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-brand">
+                        Product
+                      </span>
+                      <span className="font-display text-sm font-medium text-slate-400 transition-colors duration-300 group-hover:text-slate-500">
+                        /0{i + 1}
+                      </span>
+                    </div>
+                    <h3 className="mt-8 font-display text-3xl font-bold tracking-tight text-ink transition-colors duration-300 group-hover:text-white">
+                      {p.name}
+                    </h3>
+                    <p className="mt-4 flex-1 text-sm leading-relaxed text-slate-600 transition-colors duration-300 group-hover:text-slate-300">
+                      {p.copy}
+                    </p>
+                    <div className="mt-8 flex flex-wrap gap-2">
+                      {p.tags.map((t) => (
+                        <span
+                          key={t}
+                          className="border border-line px-3 py-1 text-xs font-medium text-slate-500 transition-colors duration-300 group-hover:border-slate-700 group-hover:text-slate-400"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="border-t border-slate-800 bg-ink py-24 text-white" data-testid="industry-cta-band">
         <div className="mx-auto flex max-w-[1440px] flex-col items-start gap-8 px-6 lg:flex-row lg:items-end lg:justify-between lg:px-12">
           <Reveal>

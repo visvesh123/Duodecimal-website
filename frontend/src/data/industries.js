@@ -25,6 +25,11 @@ export const industries = [
       { title: "Fraud & risk engines", copy: "ML-powered transaction scoring, anomaly detection and case management for fraud teams." },
       { title: "RegTech & reporting", copy: "Automated regulatory reporting, immutable audit trails and data lineage across every system." },
     ],
+    products: [
+      { name: "DD Pay", copy: "Real-time payment orchestration engine — ISO 20022-native routing, retries and reconciliation built in.", tags: ["Payments", "ISO 20022"] },
+      { name: "DD Risk", copy: "ML fraud-scoring engine that decisions every transaction in milliseconds, with full case management.", tags: ["Fraud", "ML"] },
+      { name: "DD Ledger", copy: "A modern core ledger platform — event-driven, double-entry correct, and auditable to the last paisa.", tags: ["Core banking", "Ledger"] },
+    ],
   },
   {
     n: "02",
@@ -51,6 +56,10 @@ export const industries = [
       { title: "Clinical workflow systems", copy: "Triage, e-prescribing and care coordination tools designed with clinicians, for clinicians." },
       { title: "Clinical data pipelines", copy: "FHIR-native interoperability layers and analysis-ready data platforms for research and operations." },
       { title: "Compliance & security", copy: "HIPAA-conscious architecture, consent management and end-to-end audit trails." },
+    ],
+    products: [
+      { name: "DD Care", copy: "Patient engagement suite — appointments, records, reminders and telehealth in one experience.", tags: ["Patient platform", "Telehealth"] },
+      { name: "DD Bridge", copy: "FHIR-native interoperability layer connecting EMRs, labs and devices into one patient view.", tags: ["HL7 / FHIR", "Interop"] },
     ],
   },
   {
@@ -79,6 +88,10 @@ export const industries = [
       { title: "Personalization engines", copy: "Segment-aware recommendations, search and merchandising driven by your first-party data." },
       { title: "Mobile commerce", copy: "Native-quality apps and PWAs that turn your best customers into repeat buyers." },
     ],
+    products: [
+      { name: "DD Commerce", copy: "Headless commerce core — API-first catalog, cart and checkout with sub-second storefronts.", tags: ["Headless", "Storefront"] },
+      { name: "DD Stock", copy: "Real-time inventory intelligence across every channel, warehouse and store.", tags: ["Inventory", "OMS"] },
+    ],
   },
   {
     n: "04",
@@ -105,6 +118,10 @@ export const industries = [
       { title: "Route optimization", copy: "Constraint-aware planning engines that re-optimize continuously across your whole network." },
       { title: "Warehouse management", copy: "WMS platforms with automation integration, slotting intelligence and live inventory accuracy." },
       { title: "Supply chain control towers", copy: "Exception-driven dashboards that surface problems before your customers feel them." },
+    ],
+    products: [
+      { name: "DD Fleet", copy: "Fleet telematics and visibility platform — live tracking, driver behaviour and vehicle health.", tags: ["Telematics", "Visibility"] },
+      { name: "DD Route", copy: "Constraint-aware route optimization that re-plans continuously as conditions change.", tags: ["Optimization", "Dispatch"] },
     ],
   },
   {
@@ -133,6 +150,10 @@ export const industries = [
       { title: "Predictive maintenance", copy: "ML models that schedule maintenance by machine condition, not calendar." },
       { title: "MES integration", copy: "Connecting shop-floor execution with ERP and quality systems into one operational loop." },
     ],
+    products: [
+      { name: "DD Twin", copy: "Digital twin platform — live virtual replicas of lines and plants for simulation and planning.", tags: ["Digital twin", "Simulation"] },
+      { name: "DD Sense", copy: "Predictive maintenance that reads machine signals and schedules service by condition, not calendar.", tags: ["IoT", "ML"] },
+    ],
   },
   {
     n: "06",
@@ -159,6 +180,10 @@ export const industries = [
       { title: "Billing & metering", copy: "Usage-based pricing infrastructure with accurate metering, entitlements and invoicing." },
       { title: "Platform re-engineering", copy: "Strangler-pattern modernization of monoliths into services your team can actually own." },
       { title: "DevOps & SRE", copy: "CI/CD, observability and incident practices that keep SLAs green as you grow." },
+    ],
+    products: [
+      { name: "DD Meter", copy: "Usage metering and billing infrastructure — accurate metering, entitlements and invoicing.", tags: ["Billing", "Metering"] },
+      { name: "DD Tenant", copy: "Multi-tenancy toolkit — isolation models, tenant-aware data layers and self-serve provisioning.", tags: ["Multi-tenancy", "Platform"] },
     ],
   },
 ];

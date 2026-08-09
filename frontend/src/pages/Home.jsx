@@ -8,6 +8,8 @@ import { Industries } from "@/components/Industries";
 import { About } from "@/components/About";
 import { CaseStudies } from "@/components/CaseStudies";
 import { Testimonials } from "@/components/Testimonials";
+import { Insights } from "@/components/Insights";
+import { Happenings } from "@/components/Happenings";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
@@ -31,6 +33,8 @@ export default function Home() {
       <About />
       <CaseStudies />
       <Testimonials />
+      <Insights />
+      <Happenings />
       <Contact />
       <Footer />
     </main>
