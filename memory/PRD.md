@@ -37,7 +37,7 @@
 
 ## Updates (2026-08-08)
 - Palette aligned to real brand at duodecimal.in: royal blue #2E4BFF accent (logo periwinkle #6B85FF noted), black/white base
-- Typography switched to brand fonts: Oswald (headings) + Poppins (body), heading tracking relaxed for Oswald's condensed cut
+- Typography: IBM Plex family — IBM Plex Sans Condensed (headings) + IBM Plex Sans (body) + IBM Plex Mono available for accents (switched from Oswald/Poppins on user request)
 - Real DU0DEC1MAL logo artwork (from duodecimal.in) saved to frontend/public/logo.png and used in nav, footer, admin login and admin dashboard, replacing the "12" placeholder
 - Individual industry pages at /industries/:slug (6 pages: fintech-banking, healthcare-life-sciences, retail-ecommerce, logistics-supply-chain, manufacturing-iot, saas-platforms) with hero, stats band, numbered challenges, offerings grid, products section and CTA; shared data in src/data/industries.js; homepage accordion links to each page; nav handles cross-page hash navigation
 - Products per industry page (DD Pay, DD Risk, DD Ledger, DD Care, DD Bridge, DD Commerce, DD Stock, DD Fleet, DD Route, DD Twin, DD Sense, DD Meter, DD Tenant — placeholder names/details for user to replace)

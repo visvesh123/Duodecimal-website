@@ -8,8 +8,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['Oswald', 'sans-serif'],
-        sans: ['Poppins', 'sans-serif'],
+        display: ['"IBM Plex Sans Condensed"', 'sans-serif'],
+        sans: ['"IBM Plex Sans"', 'sans-serif'],
+        mono: ['"IBM Plex Mono"', 'monospace'],
       },
       colors: {
         brand: '#2E4BFF',
