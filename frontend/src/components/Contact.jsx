@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { toast } from "sonner";
 import { ArrowUpRight, Loader2 } from "lucide-react";
@@ -28,6 +29,18 @@ export const Contact = () => {
     message: "",
   });
   const [sending, setSending] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const product = location.state?.product;
+    if (product) {
+      setForm((f) => ({
+        ...f,
+        service: "Other",
+        message: `I'd like a demo of ${product}.`,
+      }));
+    }
+  }, [location.state]);
 
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 

@@ -7,6 +7,8 @@ import Home from "@/pages/Home";
 import IndustryPage from "@/pages/IndustryPage";
 import Clients from "@/pages/Clients";
 import ClientStory from "@/pages/ClientStory";
+import Products from "@/pages/Products";
+import ProductPage from "@/pages/ProductPage";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import AdminLogin from "@/pages/AdminLogin";
@@ -37,6 +39,8 @@ function App() {
           <Route path="/industries/:slug" element={<IndustryPage />} />
           <Route path="/clients" element={<Clients />} />
           <Route path="/clients/:slug" element={<ClientStory />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:slug" element={<ProductPage />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/admin/login" element={<AdminLogin />} />

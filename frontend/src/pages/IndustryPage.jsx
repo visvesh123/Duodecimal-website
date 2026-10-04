@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams, useNavigate, Navigate } from "react-router-dom";
 import { ArrowUpRight, ArrowLeft } from "lucide-react";
 import { industries } from "@/data/industries";
+import { slugify } from "@/data/products";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Reveal, MaskedLine } from "@/components/Reveal";
@@ -157,7 +158,11 @@ export default function IndustryPage() {
             <div className="mt-16 grid grid-cols-1 gap-px border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
               {industry.products.map((p, i) => (
                 <Reveal key={p.name} delay={i * 0.06} className="bg-white">
-                  <div className="group flex h-full flex-col p-8 transition-colors duration-300 hover:bg-ink lg:p-10" data-testid={`industry-product-${i + 1}`}>
+                  <div
+                    className="group flex h-full cursor-pointer flex-col p-8 transition-colors duration-300 hover:bg-ink lg:p-10"
+                    onClick={() => navigate(`/products/${slugify(p.name)}`)}
+                    data-testid={`industry-product-${i + 1}`}
+                  >
                     <div className="flex items-center justify-between">
                       <span className="border border-brand px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-brand">
                         Product

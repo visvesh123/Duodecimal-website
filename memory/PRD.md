@@ -45,6 +45,7 @@
 - Navbar Industries dropdown (desktop hover panel + mobile sub-links) listing all 8 industries, linking to each industry page
 - "Clients who trust us" wordmark strip on the HOMEPAGE (moved off industry pages per user request) — 16 placeholder client names, 2 per industry, right after the hero
 - Airport360 aviation client story published at /clients/airport360-expo (backs up Aviation page; also appears first on /clients and homepage Work section)
+- Product pages: /products index (grouped by industry) + /products/:slug detail pages for all 19 products (QTap, QFace, MUOne, MITHR, Airport CDPs, Turnaround Intelligence + 13 DD-* placeholders); data in src/data/products.js; demo buttons pre-fill the contact form message; industry page product cards link to product pages; navbar has Products link
 - Blog: /blog list + /blog/:slug article pages; posts stored in MongoDB; 3 sample articles seeded; public GET /api/posts, /api/posts/{slug}; admin POST/DELETE
 - Happenings section on homepage (company news/LinkedIn-linked updates); happenings stored in MongoDB; 3 samples seeded; public GET /api/happenings; admin POST/DELETE
 - Admin dashboard now has tabs: Enquiries | Client stories | Blog articles | Happenings, with publish + delete forms
