@@ -186,4 +186,68 @@ export const industries = [
       { name: "DD Tenant", copy: "Multi-tenancy toolkit — isolation models, tenant-aware data layers and self-serve provisioning.", tags: ["Multi-tenancy", "Platform"] },
     ],
   },
+  {
+    n: "07",
+    slug: "education",
+    title: "Education",
+    copy: "Campus automation, attendance intelligence and digital learning platforms for universities and institutions.",
+    tags: ["Campus automation", "Attendance", "Learning platforms"],
+    tagline: "Campuses that run on intelligence.",
+    heroCopy:
+      "From admissions to alumni, institutions run on systems that were never designed to work together. Duodecimal builds the platforms that unify campus operations — attendance, academics and analytics — so educators spend their time teaching, not administrating.",
+    img: "https://images.pexels.com/photos/411011/sun-energy-solar-electricity-411011.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    stats: [
+      { value: "40+", label: "Institutions live" },
+      { value: "2M+", label: "Attendance events / month" },
+      { value: "<5s", label: "Per-student check-in" },
+    ],
+    challenges: [
+      { title: "Attendance that eats teaching time", copy: "Manual registers burn the first ten minutes of every lecture and are trivially easy to proxy. Automated tap and face-based attendance gives that time back to teaching." },
+      { title: "Systems that don't talk", copy: "Admissions, academics, exams and finance each live in their own tool. We unify them into one campus platform with a single, reliable student record." },
+      { title: "No early warning for at-risk students", copy: "By the time grades arrive, it is already too late. Attendance and engagement analytics flag at-risk students weeks before results do." },
+    ],
+    offerings: [
+      { title: "Campus automation", copy: "Attendance, access control, timetables and notifications running on autopilot." },
+      { title: "Learning platforms", copy: "Digital content, assessments and virtual classrooms built for institutional scale." },
+      { title: "Student analytics", copy: "Engagement, performance and at-risk early-warning dashboards for faculty and leadership." },
+      { title: "Institution ERP", copy: "Admissions to alumni in one system of record — academics, exams, fees and placements." },
+    ],
+    products: [
+      { name: "QTap", copy: "Tap-based attendance and campus access — students tap in, and records update everywhere instantly.", tags: ["Attendance", "NFC"] },
+      { name: "QFace", copy: "Face-recognition attendance and identity — contactless, proxy-proof and privacy-conscious by design.", tags: ["Face recognition", "Identity"] },
+      { name: "MUOne", copy: "The all-in-one university platform — admissions, academics, exams and analytics in one system.", tags: ["University ERP", "Analytics"] },
+    ],
+  },
+  {
+    n: "08",
+    slug: "aviation",
+    title: "Aviation",
+    copy: "Airport operations, turnaround optimization and passenger data platforms for airports and airlines.",
+    tags: ["Airport operations", "A-CDM", "Turnaround"],
+    tagline: "Every turnaround, on time.",
+    heroCopy:
+      "An airport is a thousand decisions an hour, made by teams that rarely share the same picture. Duodecimal builds the platforms that put airlines, ground handlers, ATC and airport operators on one timeline — so every departure leaves on it.",
+    img: "https://images.pexels.com/photos/20697911/pexels-photo-20697911.png?auto=compress&cs=tinysrgb&w=1200",
+    stats: [
+      { value: "45%", label: "Fewer turnaround delays" },
+      { value: "1M+", label: "Passengers processed monthly" },
+      { value: "24/7", label: "Ops-critical reliability" },
+    ],
+    challenges: [
+      { title: "Turnarounds that cascade", copy: "A ten-minute delay at 8 AM becomes a cancelled rotation by evening. Predictive turnaround intelligence breaks the chain before it starts." },
+      { title: "Every stakeholder, a different clock", copy: "Airlines, ground handlers and ATC each work from their own systems. Collaborative decision-making puts everyone on the same timeline." },
+      { title: "Passenger data in silos", copy: "Queues, dwell times and flow bottlenecks stay invisible until a unified data platform makes them obvious — and fixable." },
+    ],
+    offerings: [
+      { title: "Airport operations platforms", copy: "AOCC-grade operational picture across airside, terminal and landside in real time." },
+      { title: "A-CDM implementation", copy: "Milestone-based Airport Collaborative Decision-Making, aligned with international standards." },
+      { title: "Turnaround analytics", copy: "ML prediction of off-block times and delay propagation across the day's schedule." },
+      { title: "Passenger flow intelligence", copy: "Queue prediction, dwell analytics and capacity planning for terminals." },
+    ],
+    products: [
+      { name: "MITHR", copy: "Airport operations intelligence platform — one live picture of airside, terminal and landside operations.", tags: ["Operations", "AOCC"] },
+      { name: "Airport CDPs", copy: "Airport Collaborative Decision-Making platform — airlines, ground handlers and ATC working from the same timeline.", tags: ["A-CDM", "Collaboration"] },
+      { name: "Turnaround Intelligence", copy: "AI-driven aircraft turnaround optimization — predict delays before they cascade across the day.", tags: ["AI", "Turnaround"] },
+    ],
+  },
 ];

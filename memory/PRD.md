@@ -40,7 +40,9 @@
 - Typography: IBM Plex family — IBM Plex Sans Condensed (headings) + IBM Plex Sans (body) + IBM Plex Mono available for accents (switched from Oswald/Poppins on user request)
 - Real DU0DEC1MAL logo artwork (from duodecimal.in) saved to frontend/public/logo.png and used in nav, footer, admin login and admin dashboard, replacing the "12" placeholder
 - Individual industry pages at /industries/:slug (6 pages: fintech-banking, healthcare-life-sciences, retail-ecommerce, logistics-supply-chain, manufacturing-iot, saas-platforms) with hero, stats band, numbered challenges, offerings grid, products section and CTA; shared data in src/data/industries.js; homepage accordion links to each page; nav handles cross-page hash navigation
-- Products per industry page (DD Pay, DD Risk, DD Ledger, DD Care, DD Bridge, DD Commerce, DD Stock, DD Fleet, DD Route, DD Twin, DD Sense, DD Meter, DD Tenant — placeholder names/details for user to replace)
+- Products per industry page (Education: QTap, QFace, MUOne — real products per user; Aviation: MITHR, Airport CDPs, Turnaround Intelligence — real products per user; other industries use DD-* placeholders)
+- 8 industries total: added Education (/industries/education) and Aviation (/industries/aviation) with real product names from user
+- Navbar Industries dropdown (desktop hover panel + mobile sub-links) listing all 8 industries, linking to each industry page
 - Blog: /blog list + /blog/:slug article pages; posts stored in MongoDB; 3 sample articles seeded; public GET /api/posts, /api/posts/{slug}; admin POST/DELETE
 - Happenings section on homepage (company news/LinkedIn-linked updates); happenings stored in MongoDB; 3 samples seeded; public GET /api/happenings; admin POST/DELETE
 - Admin dashboard now has tabs: Enquiries | Client stories | Blog articles | Happenings, with publish + delete forms

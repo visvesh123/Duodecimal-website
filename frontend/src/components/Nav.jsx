@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react";
+import { industries } from "@/data/industries";
 
 const links = [
   { label: "Services", href: "#services" },
@@ -20,8 +22,15 @@ export const scrollToSection = (href) => {
 
 export const Nav = () => {
   const [open, setOpen] = useState(false);
+  const [indOpen, setIndOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+
+  const goIndustry = (slug) => {
+    setIndOpen(false);
+    setOpen(false);
+    navigate(`/industries/${slug}`);
+  };
 
   const go = (href) => {
     setOpen(false);
@@ -53,16 +62,66 @@ export const Nav = () => {
         </button>
 
         <nav className="hidden items-center gap-10 lg:flex">
-          {links.map((l) => (
-            <button
-              key={l.href}
-              data-testid={`nav-link-${l.label.toLowerCase()}`}
-              onClick={() => go(l.href)}
-              className="text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-ink"
-            >
-              {l.label}
-            </button>
-          ))}
+          {links.map((l) =>
+            l.label === "Industries" ? (
+              <div
+                key={l.href}
+                className="relative"
+                onMouseEnter={() => setIndOpen(true)}
+                onMouseLeave={() => setIndOpen(false)}
+              >
+                <button
+                  data-testid="nav-link-industries"
+                  onClick={() => go(l.href)}
+                  className="flex items-center gap-1 text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-ink"
+                >
+                  Industries
+                  <ChevronDown
+                    className={`h-3.5 w-3.5 transition-transform duration-200 ${indOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+                <AnimatePresence>
+                  {indOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 8 }}
+                      transition={{ duration: 0.18, ease: "easeOut" }}
+                      className="absolute left-1/2 top-full -translate-x-1/2 pt-4"
+                      data-testid="nav-industries-dropdown"
+                    >
+                      <div className="grid w-[540px] grid-cols-2 gap-px border border-line bg-line">
+                        {industries.map((ind) => (
+                          <button
+                            key={ind.slug}
+                            data-testid={`nav-industry-${ind.slug}`}
+                            onClick={() => goIndustry(ind.slug)}
+                            className="group flex items-baseline gap-3 bg-white px-5 py-4 text-left transition-colors duration-200 hover:bg-paper"
+                          >
+                            <span className="font-display text-xs font-medium text-slate-400">
+                              {ind.n}
+                            </span>
+                            <span className="text-sm font-semibold text-ink transition-colors duration-200 group-hover:text-brand">
+                              {ind.title}
+                            </span>
+                          </button>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ) : (
+              <button
+                key={l.href}
+                data-testid={`nav-link-${l.label.toLowerCase()}`}
+                onClick={() => go(l.href)}
+                className="text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-ink"
+              >
+                {l.label}
+              </button>
+            )
+          )}
           <button
             data-testid="nav-cta-button"
             onClick={() => go("#contact")}
@@ -86,14 +145,26 @@ export const Nav = () => {
       {open && (
         <div className="border-t border-line bg-white lg:hidden">
           {[...links, { label: "Contact", href: "#contact" }].map((l) => (
-            <button
-              key={l.href}
-              data-testid={`nav-mobile-link-${l.label.toLowerCase()}`}
-              onClick={() => go(l.href)}
-              className="block w-full border-b border-line px-6 py-4 text-left text-base font-medium text-ink"
-            >
-              {l.label}
-            </button>
+            <div key={l.href}>
+              <button
+                data-testid={`nav-mobile-link-${l.label.toLowerCase()}`}
+                onClick={() => go(l.href)}
+                className="block w-full border-b border-line px-6 py-4 text-left text-base font-medium text-ink"
+              >
+                {l.label}
+              </button>
+              {l.label === "Industries" &&
+                industries.map((ind) => (
+                  <button
+                    key={ind.slug}
+                    data-testid={`nav-mobile-industry-${ind.slug}`}
+                    onClick={() => goIndustry(ind.slug)}
+                    className="block w-full border-b border-line bg-paper px-10 py-3 text-left text-sm text-slate-600"
+                  >
+                    {ind.title}
+                  </button>
+                ))}
+            </div>
           ))}
         </div>
       )}
