@@ -1,30 +1,33 @@
-import { industries } from "@/data/industries";
+import Marquee from "react-fast-marquee";
+import { Asterisk } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
-const clients = industries.flatMap((i) => i.clients?.slice(0, 2) ?? []);
+const clients = [
+  "Mahindra University",
+  "Dormakaba",
+  "Deccan Tobacco",
+  "EMSE",
+  "Murugappa",
+];
 
 export const TrustedBy = () => (
-  <section className="border-b border-line bg-white py-16 lg:py-20" data-testid="trusted-by-section">
-    <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
+  <section className="border-b border-line bg-white py-14 lg:py-16" data-testid="trusted-by-section">
+    <div className="mx-auto mb-10 max-w-[1440px] px-6 lg:px-12">
       <Reveal>
-        <p className="mb-10 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
+        <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
           <span className="h-px w-10 bg-brand" /> Clients who trust us
         </p>
       </Reveal>
-      <div className="grid grid-cols-2 gap-px border border-line bg-line sm:grid-cols-4 lg:grid-cols-8">
-        {clients.map((c, i) => (
-          <Reveal key={c} delay={i * 0.03} className="bg-white">
-            <div
-              className="flex h-full items-center justify-center px-4 py-8"
-              data-testid={`trusted-client-${i + 1}`}
-            >
-              <span className="text-center font-display text-base font-semibold uppercase tracking-wide text-slate-400 transition-colors duration-200 hover:text-ink">
-                {c}
-              </span>
-            </div>
-          </Reveal>
-        ))}
-      </div>
     </div>
+    <Marquee speed={30} gradient={false} pauseOnHover>
+      {[...clients, ...clients].map((c, i) => (
+        <span key={i} className="flex items-center">
+          <span className="mx-12 font-display text-2xl font-semibold uppercase tracking-wide text-slate-300 transition-colors duration-200 hover:text-ink md:text-3xl">
+            {c}
+          </span>
+          <Asterisk className="h-6 w-6 text-brand" strokeWidth={1.5} />
+        </span>
+      ))}
+    </Marquee>
   </section>
 );
