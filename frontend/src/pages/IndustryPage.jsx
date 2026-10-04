@@ -81,6 +81,31 @@ export default function IndustryPage() {
         </div>
       </section>
 
+      {industry.clients?.length > 0 && (
+        <section className="border-b border-line bg-paper py-14" data-testid="industry-clients">
+          <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
+            <Reveal>
+              <p className="mb-8 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
+                <span className="h-px w-10 bg-brand" /> Clients who trust us
+              </p>
+            </Reveal>
+            <div className="grid grid-cols-2 gap-px border border-line bg-line sm:grid-cols-3 lg:grid-cols-6">
+              {industry.clients.map((c, i) => (
+                <div
+                  key={c}
+                  className="flex items-center justify-center bg-white px-4 py-8"
+                  data-testid={`industry-client-${i + 1}`}
+                >
+                  <span className="text-center font-display text-lg font-semibold uppercase tracking-wide text-slate-400 transition-colors duration-200 hover:text-ink">
+                    {c}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="py-24 lg:py-32" data-testid="industry-challenges">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
           <Reveal>

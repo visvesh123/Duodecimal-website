@@ -43,6 +43,8 @@
 - Products per industry page (Education: QTap, QFace, MUOne — real products per user; Aviation: MITHR, Airport CDPs, Turnaround Intelligence — real products per user; other industries use DD-* placeholders)
 - 8 industries total: added Education (/industries/education) and Aviation (/industries/aviation) with real product names from user
 - Navbar Industries dropdown (desktop hover panel + mobile sub-links) listing all 8 industries, linking to each industry page
+- "Clients who trust us" wordmark strip on every industry page (6 placeholder client names per industry — to be replaced with real logos)
+- Airport360 aviation client story published at /clients/airport360-expo (backs up Aviation page; also appears first on /clients and homepage Work section)
 - Blog: /blog list + /blog/:slug article pages; posts stored in MongoDB; 3 sample articles seeded; public GET /api/posts, /api/posts/{slug}; admin POST/DELETE
 - Happenings section on homepage (company news/LinkedIn-linked updates); happenings stored in MongoDB; 3 samples seeded; public GET /api/happenings; admin POST/DELETE
 - Admin dashboard now has tabs: Enquiries | Client stories | Blog articles | Happenings, with publish + delete forms

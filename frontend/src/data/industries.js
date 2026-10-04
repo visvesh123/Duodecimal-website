@@ -30,6 +30,7 @@ export const industries = [
       { name: "DD Risk", copy: "ML fraud-scoring engine that decisions every transaction in milliseconds, with full case management.", tags: ["Fraud", "ML"] },
       { name: "DD Ledger", copy: "A modern core ledger platform — event-driven, double-entry correct, and auditable to the last paisa.", tags: ["Core banking", "Ledger"] },
     ],
+    clients: ["Meridian Bank", "NovaPay", "Crestline Capital", "FinEdge", "UrbanCredit", "PaySphere"],
   },
   {
     n: "02",
@@ -61,6 +62,7 @@ export const industries = [
       { name: "DD Care", copy: "Patient engagement suite — appointments, records, reminders and telehealth in one experience.", tags: ["Patient platform", "Telehealth"] },
       { name: "DD Bridge", copy: "FHIR-native interoperability layer connecting EMRs, labs and devices into one patient view.", tags: ["HL7 / FHIR", "Interop"] },
     ],
+    clients: ["Northwind Health", "CarePoint", "MediCore Labs", "Vitalis", "HealthGrid", "SanoLife"],
   },
   {
     n: "03",
@@ -92,6 +94,7 @@ export const industries = [
       { name: "DD Commerce", copy: "Headless commerce core — API-first catalog, cart and checkout with sub-second storefronts.", tags: ["Headless", "Storefront"] },
       { name: "DD Stock", copy: "Real-time inventory intelligence across every channel, warehouse and store.", tags: ["Inventory", "OMS"] },
     ],
+    clients: ["UrbanMart", "StyleNest", "Kartify", "FreshLane", "Trendora", "ShopAxis"],
   },
   {
     n: "04",
@@ -123,6 +126,7 @@ export const industries = [
       { name: "DD Fleet", copy: "Fleet telematics and visibility platform — live tracking, driver behaviour and vehicle health.", tags: ["Telematics", "Visibility"] },
       { name: "DD Route", copy: "Constraint-aware route optimization that re-plans continuously as conditions change.", tags: ["Optimization", "Dispatch"] },
     ],
+    clients: ["Atlas Freight", "SwiftHaul", "CargoLink", "TransMerge", "FleetEdge", "Portside"],
   },
   {
     n: "05",
@@ -154,6 +158,7 @@ export const industries = [
       { name: "DD Twin", copy: "Digital twin platform — live virtual replicas of lines and plants for simulation and planning.", tags: ["Digital twin", "Simulation"] },
       { name: "DD Sense", copy: "Predictive maintenance that reads machine signals and schedules service by condition, not calendar.", tags: ["IoT", "ML"] },
     ],
+    clients: ["ForgeWell", "PrecisionParts", "AutoFab", "SteelArc", "MachNine", "Vertex Industries"],
   },
   {
     n: "06",
@@ -185,6 +190,7 @@ export const industries = [
       { name: "DD Meter", copy: "Usage metering and billing infrastructure — accurate metering, entitlements and invoicing.", tags: ["Billing", "Metering"] },
       { name: "DD Tenant", copy: "Multi-tenancy toolkit — isolation models, tenant-aware data layers and self-serve provisioning.", tags: ["Multi-tenancy", "Platform"] },
     ],
+    clients: ["DataNest", "AppForge", "ScaleByte", "Metricly", "Zenflow", "CloudNine"],
   },
   {
     n: "07",
@@ -217,6 +223,7 @@ export const industries = [
       { name: "QFace", copy: "Face-recognition attendance and identity — contactless, proxy-proof and privacy-conscious by design.", tags: ["Face recognition", "Identity"] },
       { name: "MUOne", copy: "The all-in-one university platform — admissions, academics, exams and analytics in one system.", tags: ["University ERP", "Analytics"] },
     ],
+    clients: ["Greenfield University", "Lakeview Institute", "Nova Academy", "EduTrust Colleges", "CityTech University", "St. Mary's Group"],
   },
   {
     n: "08",
@@ -249,5 +256,6 @@ export const industries = [
       { name: "Airport CDPs", copy: "Airport Collaborative Decision-Making platform — airlines, ground handlers and ATC working from the same timeline.", tags: ["A-CDM", "Collaboration"] },
       { name: "Turnaround Intelligence", copy: "AI-driven aircraft turnaround optimization — predict delays before they cascade across the day.", tags: ["AI", "Turnaround"] },
     ],
+    clients: ["Airport360", "SkyPort Airports", "AeroBridge", "IndiGround Services", "TerminalOne", "AeroNexus"],
   },
 ];
