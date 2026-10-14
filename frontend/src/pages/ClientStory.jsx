@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { ArrowLeft, ArrowUpRight, Check, Quote } from "lucide-react";
+import { ArrowLeft, Check, Quote } from "lucide-react";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { MaskedLine, Reveal } from "@/components/Reveal";
@@ -55,9 +55,6 @@ export default function ClientStory() {
             <>
               <div className="grid grid-cols-1 gap-12 pb-16 lg:grid-cols-12">
                 <div className="lg:col-span-8">
-                  <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
-                    <span className="h-px w-10 bg-brand" /> Client Story — {story.industry}
-                  </p>
                   <h1 className="font-display text-4xl font-bold leading-[1.02] tracking-[-0.01em] text-ink sm:text-5xl lg:text-6xl">
                     <MaskedLine delay={0.1}>{story.title}</MaskedLine>
                   </h1>
@@ -101,26 +98,26 @@ export default function ClientStory() {
               <div className="grid grid-cols-1 gap-12 py-16 lg:grid-cols-12 lg:py-24">
                 <div className="lg:col-span-6" data-testid="story-challenge">
                   <Reveal>
-                    <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
-                      <span className="h-px w-10 bg-brand" /> Business Challenge
-                    </p>
+                    <h2 className="mb-4 font-display text-2xl font-bold tracking-tight text-ink">
+                      Business Challenge
+                    </h2>
                     <p className="text-base leading-relaxed text-slate-700">{story.challenge}</p>
                   </Reveal>
                 </div>
                 <div className="lg:col-span-6" data-testid="story-solution">
                   <Reveal delay={0.1}>
-                    <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
-                      <span className="h-px w-10 bg-brand" /> Solution
-                    </p>
+                    <h2 className="mb-4 font-display text-2xl font-bold tracking-tight text-ink">
+                      Solution
+                    </h2>
                     <p className="text-base leading-relaxed text-slate-700">{story.solution}</p>
                   </Reveal>
                 </div>
                 {story.results?.length > 0 && (
                   <div className="lg:col-span-12" data-testid="story-results">
                     <Reveal>
-                      <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
-                        <span className="h-px w-10 bg-brand" /> Results & Benefits
-                      </p>
+                      <h2 className="mb-6 font-display text-2xl font-bold tracking-tight text-ink">
+                        Results & Benefits
+                      </h2>
                       <div className="grid grid-cols-1 gap-px border border-line bg-line md:grid-cols-2">
                         {story.results.map((r, i) => (
                           <div key={i} className="flex items-start gap-4 bg-white p-6" data-testid={`story-result-${i + 1}`}>
@@ -169,16 +166,6 @@ export default function ClientStory() {
                   Tell us about the problem you are solving. A senior engineer
                   will respond within one business day.
                 </p>
-              </Reveal>
-              <Reveal delay={0.1}>
-                <button
-                  data-testid="story-cta-button"
-                  onClick={() => navigate("/#contact")}
-                  className="group flex items-center gap-2 bg-ink px-7 py-4 text-sm font-semibold text-white transition-colors duration-200 hover:bg-brand"
-                >
-                  Start a project
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </button>
               </Reveal>
             </div>
           </section>

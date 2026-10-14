@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { MaskedLine, Reveal } from "@/components/Reveal";
@@ -93,14 +93,6 @@ export default function BlogPost() {
                   Tell us about the problem you are solving. A senior engineer
                   will respond within one business day.
                 </p>
-                <button
-                  data-testid="blog-post-cta"
-                  onClick={() => navigate("/#contact")}
-                  className="group mt-6 flex items-center gap-2 bg-ink px-6 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-brand"
-                >
-                  Start a project
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </button>
               </div>
             </article>
           )}

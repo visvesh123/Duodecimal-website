@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['"IBM Plex Sans Condensed"', 'sans-serif'],
-        sans: ['"IBM Plex Sans"', 'sans-serif'],
+        display: ['"Inter Tight"', 'Inter', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
         mono: ['"IBM Plex Mono"', 'monospace'],
       },
       colors: {

@@ -21,9 +21,6 @@ export const Happenings = () => {
     <section className="border-t border-line bg-paper py-24 lg:py-32" data-testid="happenings-section">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         <Reveal>
-          <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
-            <span className="h-px w-10 bg-brand" /> Happenings
-          </p>
           <h2 className="max-w-3xl font-display text-4xl font-bold tracking-[-0.01em] text-ink sm:text-5xl lg:text-6xl">
             Life at Duodecimal.
           </h2>

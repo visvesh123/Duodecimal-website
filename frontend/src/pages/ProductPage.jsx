@@ -35,9 +35,6 @@ export default function ProductPage() {
             >
               <ArrowLeft className="h-4 w-4" /> All products
             </button>
-            <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
-              <span className="h-px w-10 bg-brand" /> Product — {product.industry}
-            </p>
             <h1 className="font-display text-5xl font-bold leading-[0.98] tracking-[-0.01em] text-ink sm:text-6xl lg:text-7xl">
               <MaskedLine delay={0.1}>{product.name}</MaskedLine>
             </h1>
@@ -87,24 +84,34 @@ export default function ProductPage() {
       <section className="py-24 lg:py-32" data-testid="product-features">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
           <Reveal>
-            <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
-              <span className="h-px w-10 bg-brand" /> Key Capabilities
-            </p>
             <h2 className="max-w-3xl font-display text-4xl font-bold tracking-[-0.01em] text-ink sm:text-5xl">
-              What {product.name} does.
+              What it does.
             </h2>
           </Reveal>
           <div className="mt-12 grid grid-cols-1 gap-px border border-line bg-line md:grid-cols-2">
-            {product.features.map((f, i) => (
-              <Reveal key={f} delay={i * 0.05} className="bg-white">
-                <div className="flex h-full items-start gap-4 p-6 lg:p-8" data-testid={`product-feature-${i + 1}`}>
-                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center bg-brand">
-                    <Check className="h-4 w-4 text-white" />
-                  </span>
-                  <p className="text-sm leading-relaxed text-slate-700 md:text-base">{f}</p>
-                </div>
-              </Reveal>
-            ))}
+            {product.features.map((f, i) => {
+              const title = typeof f === "string" ? null : f.title;
+              const copy = typeof f === "string" ? f : f.copy;
+              return (
+                <Reveal key={title || copy} delay={i * 0.05} className="bg-white">
+                  <div className="spotlight flex h-full items-start gap-4 p-6 lg:p-8" data-testid={`product-feature-${i + 1}`}>
+                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center bg-brand">
+                      <Check className="h-4 w-4 text-white" />
+                    </span>
+                    <div>
+                      {title ? (
+                        <h3 className="font-display text-lg font-bold tracking-tight text-ink lg:text-xl">
+                          {title}
+                        </h3>
+                      ) : null}
+                      <p className={`${title ? "mt-2" : ""} text-sm leading-relaxed text-slate-700 md:text-base`}>
+                        {copy}
+                      </p>
+                    </div>
+                  </div>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -113,11 +120,11 @@ export default function ProductPage() {
         <div className="mx-auto flex max-w-[1440px] flex-col items-start gap-8 px-6 lg:flex-row lg:items-end lg:justify-between lg:px-12">
           <Reveal>
             <h2 className="max-w-2xl font-display text-4xl font-bold tracking-[-0.01em] sm:text-5xl">
-              See {product.name} in action.
+              {product.ctaTitle || "See it run."}
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-400 md:text-base">
-              Book a demo and we will walk you through {product.name} with your
-              own use case in mind — an engineer, not a sales rep, will host it.
+              {product.ctaCopy ||
+                "An engineer will walk you through it. Not a sales rep."}
             </p>
           </Reveal>
           <Reveal delay={0.1}>

@@ -8,12 +8,13 @@ import { Reveal } from "@/components/Reveal";
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const serviceOptions = [
-  "Custom Software Development",
-  "Web & Mobile Apps",
-  "Cloud & DevOps",
-  "AI / ML",
-  "UI/UX Design",
-  "Technology Consulting",
+  "Data Platforms and Engineering",
+  "Cloud-Native and Platform Engineering",
+  "Enterprise AI and Intelligent Systems",
+  "Generative AI and Agentic Systems",
+  "Computer Vision and Multimodal AI",
+  "Real-Time Analytics and Decision Intelligence",
+  "Digital Twins and Simulation",
   "Other",
 ];
 
@@ -64,9 +65,6 @@ export const Contact = () => {
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-16 px-6 lg:grid-cols-12 lg:px-12">
         <div className="lg:col-span-5">
           <Reveal>
-            <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
-              <span className="h-px w-10 bg-brand" /> Contact
-            </p>
             <h2 className="font-display text-4xl font-bold leading-[1.02] tracking-[-0.01em] text-ink sm:text-5xl lg:text-6xl">
               Let's build something that lasts.
             </h2>

@@ -18,7 +18,7 @@ export const Footer = () => (
             Sitemap
           </p>
           <div className="mt-4 flex flex-col items-start gap-3">
-            {["Services", "Industries", "About", "Work", "Contact"].map((l) => (
+            {["Services", "Industries", "About", "Contact"].map((l) => (
               <button
                 key={l}
                 data-testid={`footer-link-${l.toLowerCase()}`}
@@ -46,7 +46,7 @@ export const Footer = () => (
       </div>
     </div>
     <div className="overflow-hidden border-t border-line">
-      <p className="text-outline whitespace-nowrap text-center font-display text-[18vw] font-black leading-none tracking-tight">
+      <p className="text-outline whitespace-nowrap text-center font-display text-[18vw] font-black leading-none tracking-tight transition-colors duration-700 hover:text-brand/10">
         DUODECIMAL
       </p>
     </div>

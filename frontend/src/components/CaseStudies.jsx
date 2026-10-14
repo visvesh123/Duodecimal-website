@@ -23,9 +23,6 @@ export const CaseStudies = () => {
   <section id="work" className="border-t border-line bg-ink py-24 text-white lg:py-32" data-testid="case-studies-section">
     <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
       <Reveal>
-        <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
-          <span className="h-px w-10 bg-brand" /> Selected Work
-        </p>
         <div className="flex flex-wrap items-end justify-between gap-6">
           <h2 className="max-w-3xl font-display text-4xl font-bold tracking-[-0.01em] sm:text-5xl lg:text-6xl">
             Proof, not promises.
@@ -47,7 +44,7 @@ export const CaseStudies = () => {
         {stories.map((s, i) => (
           <Reveal key={s.id} delay={i * 0.08} className="bg-ink">
             <article
-              className="group flex h-full cursor-pointer flex-col"
+              className="spotlight group flex h-full cursor-pointer flex-col"
               onClick={() => navigate(`/clients/${s.slug}`)}
               data-testid={`case-study-${i + 1}`}
             >

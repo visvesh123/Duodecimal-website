@@ -8,7 +8,6 @@ import { Services } from "@/components/Services";
 import { Industries } from "@/components/Industries";
 import { About } from "@/components/About";
 import { CaseStudies } from "@/components/CaseStudies";
-import { Testimonials } from "@/components/Testimonials";
 import { Insights } from "@/components/Insights";
 import { Happenings } from "@/components/Happenings";
 import { Contact } from "@/components/Contact";
@@ -28,13 +27,12 @@ export default function Home() {
     <main className="bg-white">
       <Nav />
       <Hero />
-      <TrustedBy />
       <EditorialMarquee />
       <Services />
       <Industries />
       <About />
       <CaseStudies />
-      <Testimonials />
+      <TrustedBy />
       <Insights />
       <Happenings />
       <Contact />

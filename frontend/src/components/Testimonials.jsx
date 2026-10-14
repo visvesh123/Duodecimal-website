@@ -29,9 +29,6 @@ export const Testimonials = () => (
   <section className="border-t border-line py-24 lg:py-32" data-testid="testimonials-section">
     <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
       <Reveal>
-        <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
-          <span className="h-px w-10 bg-brand" /> Client Voices
-        </p>
         <h2 className="max-w-3xl font-display text-4xl font-bold tracking-[-0.01em] text-ink sm:text-5xl lg:text-6xl">
           Trusted by the people who sign the checks.
         </h2>
@@ -40,7 +37,7 @@ export const Testimonials = () => (
       <div className="mt-16 grid grid-cols-1 gap-px border border-line bg-line lg:grid-cols-3">
         {testimonials.map((t, i) => (
           <Reveal key={t.name} delay={i * 0.08} className="bg-white">
-            <figure className="flex h-full flex-col p-8 lg:p-10" data-testid={`testimonial-${i + 1}`}>
+            <figure className="spotlight flex h-full flex-col p-8 lg:p-10" data-testid={`testimonial-${i + 1}`}>
               <Quote className="h-6 w-6 text-brand" strokeWidth={1.5} />
               <blockquote className="mt-6 flex-1 text-base leading-relaxed text-ink">
                 {t.quote}

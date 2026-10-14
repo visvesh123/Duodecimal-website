@@ -25,9 +25,6 @@ export const Insights = () => {
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
-              <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
-                <span className="h-px w-10 bg-brand" /> Insights
-              </p>
               <h2 className="font-display text-4xl font-bold tracking-[-0.01em] text-ink sm:text-5xl lg:text-6xl">
                 From the journal.
               </h2>
@@ -49,7 +46,7 @@ export const Insights = () => {
           {posts.map((p, i) => (
             <Reveal key={p.id} delay={i * 0.08} className="bg-white">
               <article
-                className="group flex h-full cursor-pointer flex-col"
+                className="spotlight group flex h-full cursor-pointer flex-col"
                 onClick={() => navigate(`/blog/${p.slug}`)}
                 data-testid={`insight-card-${i + 1}`}
               >

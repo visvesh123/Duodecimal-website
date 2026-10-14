@@ -26,9 +26,6 @@ export default function Blog() {
       <Nav />
       <section className="border-b border-line pt-16">
         <div className="mx-auto max-w-[1440px] px-6 pb-16 pt-16 lg:px-12 lg:pt-24">
-          <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
-            <span className="h-px w-10 bg-brand" /> Insights
-          </p>
           <h1 className="font-display text-5xl font-bold leading-[0.98] tracking-[-0.01em] text-ink sm:text-6xl lg:text-7xl">
             <MaskedLine delay={0.1}>The journal.</MaskedLine>
           </h1>
@@ -54,7 +51,7 @@ export default function Blog() {
               {posts.map((p, i) => (
                 <Reveal key={p.id} delay={i * 0.05} className="bg-white">
                   <article
-                    className="group flex h-full cursor-pointer flex-col"
+                    className="spotlight group flex h-full cursor-pointer flex-col"
                     onClick={() => navigate(`/blog/${p.slug}`)}
                     data-testid={`blog-card-${i + 1}`}
                   >

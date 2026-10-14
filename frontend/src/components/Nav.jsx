@@ -1,16 +1,14 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { industries } from "@/data/industries";
 
 const links = [
   { label: "Services", href: "#services" },
   { label: "Industries", href: "#industries" },
   { label: "About", href: "#about" },
-  { label: "Work", href: "#work" },
   { label: "Products", href: "/products" },
-  { label: "Insights", href: "/blog" },
 ];
 
 export const scrollToSection = (href) => {
@@ -26,6 +24,8 @@ export const Nav = () => {
   const [indOpen, setIndOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 30, restDelta: 0.001 });
 
   const goIndustry = (slug) => {
     setIndOpen(false);
@@ -53,6 +53,12 @@ export const Nav = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-line bg-white/70 backdrop-blur-xl">
+      <motion.div
+        aria-hidden
+        style={{ scaleX: progress }}
+        className="absolute -bottom-px left-0 right-0 h-0.5 origin-left bg-brand"
+        data-testid="scroll-progress"
+      />
       <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-6 lg:px-12">
         <button
           data-testid="nav-logo"
@@ -74,7 +80,7 @@ export const Nav = () => {
                 <button
                   data-testid="nav-link-industries"
                   onClick={() => go(l.href)}
-                  className="flex items-center gap-1 text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-ink"
+                  className="relative flex items-center gap-1 text-sm font-medium text-slate-600 transition-colors duration-200 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-brand after:transition-transform after:duration-300 hover:text-ink hover:after:scale-x-100"
                 >
                   Industries
                   <ChevronDown
@@ -97,7 +103,7 @@ export const Nav = () => {
                             key={ind.slug}
                             data-testid={`nav-industry-${ind.slug}`}
                             onClick={() => goIndustry(ind.slug)}
-                            className="group flex items-baseline gap-3 bg-white px-5 py-4 text-left transition-colors duration-200 hover:bg-paper"
+                            className="group flex items-baseline gap-3 bg-white px-5 py-4 text-left transition-colors duration-200 hover:bg-paper last:odd:col-span-2"
                           >
                             <span className="font-display text-xs font-medium text-slate-400">
                               {ind.n}
@@ -117,20 +123,12 @@ export const Nav = () => {
                 key={l.href}
                 data-testid={`nav-link-${l.label.toLowerCase()}`}
                 onClick={() => go(l.href)}
-                className="text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-ink"
+                className="relative text-sm font-medium text-slate-600 transition-colors duration-200 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-brand after:transition-transform after:duration-300 hover:text-ink hover:after:scale-x-100"
               >
                 {l.label}
               </button>
             )
           )}
-          <button
-            data-testid="nav-cta-button"
-            onClick={() => go("#contact")}
-            className="group flex items-center gap-2 bg-ink px-5 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:bg-brand"
-          >
-            Start a project
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </button>
         </nav>
 
         <button

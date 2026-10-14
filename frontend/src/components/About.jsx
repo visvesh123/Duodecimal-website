@@ -9,12 +9,12 @@ const chapters = [
   {
     n: "02",
     title: "Partnership",
-    copy: "We do not take tickets and disappear. Our engineers embed with your teams, challenge your assumptions and stay accountable past launch day. Most of our clients have been with us for more than five years.",
+    copy: "We do not take tickets and disappear. Our engineers embed with your teams, challenge your assumptions and stay accountable past launch day. We stay. So do the systems.",
   },
   {
     n: "03",
     title: "Proof",
-    copy: "Deckware is easy. Shipping is hard. Every engagement we take is measured against a number that matters to your business — uptime, conversion, cycle time, cost per transaction — and we report against it relentlessly.",
+    copy: "Deckware is easy. Shipping is hard. We take work to live, then we stay until it holds — in the field, under load, on the days that matter.",
   },
 ];
 
@@ -24,9 +24,6 @@ export const About = () => (
       <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <Reveal>
-            <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
-              <span className="h-px w-10 bg-brand" /> The Manifesto
-            </p>
             <h2 className="font-display text-4xl font-bold leading-[1.02] tracking-[-0.01em] text-ink sm:text-5xl lg:text-6xl">
               We think in
               <br />
@@ -34,9 +31,9 @@ export const About = () => (
             </h2>
             <p className="mt-8 max-w-md text-base leading-relaxed text-slate-600">
               Duodecimal was founded on a simple conviction: enterprise software
-              deserves the same craft as the products consumers love. Twelve
-              years later, that conviction runs platforms for banks, hospitals
-              and freight networks on five continents.
+              deserves the same craft as the products consumers love. That
+              conviction now runs platforms for factories, hospitals, campuses,
+              airports and bridges.
             </p>
           </Reveal>
           <Reveal delay={0.15}>
@@ -44,8 +41,8 @@ export const About = () => (
               <div className="absolute -left-3 -top-3 h-full w-full border border-brand" />
               <div className="relative aspect-[4/3] overflow-hidden border border-line">
                 <img
-                  src="https://images.unsplash.com/photo-1718220216044-006f43e3a9b1?q=80&w=1400&auto=format&fit=crop"
-                  alt="Duodecimal studio"
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1400&auto=format&fit=crop"
+                  alt="Engineers collaborating"
                   className="h-full w-full object-cover"
                   data-testid="about-image"
                 />

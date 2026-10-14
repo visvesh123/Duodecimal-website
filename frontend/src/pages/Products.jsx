@@ -27,18 +27,15 @@ export default function Products() {
       <Nav />
       <section className="border-b border-line pt-16">
         <div className="mx-auto max-w-[1440px] px-6 pb-16 pt-16 lg:px-12 lg:pt-24">
-          <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
-            <span className="h-px w-10 bg-brand" /> Products
-          </p>
           <h1 className="font-display text-5xl font-bold leading-[0.98] tracking-[-0.01em] text-ink sm:text-6xl lg:text-7xl">
             <MaskedLine delay={0.1}>Built by us.</MaskedLine>
             <MaskedLine delay={0.25} className="text-brand">
-              Proven in the field.
+              Run in the field.
             </MaskedLine>
           </h1>
           <p className="mt-8 max-w-xl text-base leading-relaxed text-slate-600 md:text-lg">
-            Platforms and products engineered by Duodecimal — from campus
-            attendance to airport turnaround intelligence.
+            Campus. Factory. Airport. We build the product. You run the
+            operation.
           </p>
         </div>
       </section>
@@ -48,9 +45,14 @@ export default function Products() {
           <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
             <Reveal>
               <div className="flex items-baseline justify-between gap-6">
-                <h2 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-                  {industry.title}
-                </h2>
+                <div>
+                  <h2 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+                    {industry.title}
+                  </h2>
+                  <p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-500 md:text-base">
+                    {industry.tagline}
+                  </p>
+                </div>
                 <button
                   data-testid={`products-industry-link-${industry.slug}`}
                   onClick={() => navigate(`/industries/${industry.slug}`)}
@@ -67,7 +69,7 @@ export default function Products() {
               {items.map((p, i) => (
                 <Reveal key={p.name} delay={i * 0.05} className="bg-white">
                   <article
-                    className="group flex h-full cursor-pointer flex-col p-8 transition-colors duration-300 hover:bg-ink"
+                    className="spotlight group flex h-full cursor-pointer flex-col p-8 transition-colors duration-300 hover:bg-ink"
                     onClick={() => navigate(`/products/${slugify(p.name)}`)}
                     data-testid={`product-card-${slugify(p.name)}`}
                   >
@@ -80,11 +82,11 @@ export default function Products() {
                     <h3 className="mt-8 font-display text-3xl font-bold tracking-tight text-ink transition-colors duration-300 group-hover:text-white">
                       {p.name}
                     </h3>
-                    <p className="mt-2 text-sm font-medium text-slate-500 transition-colors duration-300 group-hover:text-slate-400">
+                    <p className="mt-3 font-display text-lg font-medium tracking-tight text-slate-500 transition-colors duration-300 group-hover:text-slate-300">
                       {p.tagline}
                     </p>
-                    <p className="mt-4 flex-1 text-sm leading-relaxed text-slate-600 transition-colors duration-300 group-hover:text-slate-300">
-                      {p.description}
+                    <p className="mt-4 flex-1 text-sm leading-relaxed text-slate-600 transition-colors duration-300 group-hover:text-slate-400">
+                      {p.blurb || p.description}
                     </p>
                   </article>
                 </Reveal>
@@ -93,6 +95,20 @@ export default function Products() {
           </div>
         </section>
       ))}
+
+      <section className="border-t border-slate-800 bg-ink py-24 text-white">
+        <div className="mx-auto flex max-w-[1440px] flex-col items-start gap-8 px-6 lg:flex-row lg:items-end lg:justify-between lg:px-12">
+          <Reveal>
+            <h2 className="max-w-2xl font-display text-4xl font-bold tracking-[-0.01em] sm:text-5xl">
+              Need it built. Or need it shown.
+            </h2>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-400 md:text-base">
+              A senior engineer will respond. Not a sales rep.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       <Footer />
     </main>
   );
