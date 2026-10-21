@@ -53,7 +53,16 @@ export const Footer = () => (
     <div className="border-t border-line">
       <div className="mx-auto flex max-w-[1440px] flex-col items-start justify-between gap-2 px-6 py-6 text-xs text-slate-500 sm:flex-row sm:items-center lg:px-12">
         <p>© {new Date().getFullYear()} Duodecimal Technologies. All rights reserved.</p>
-        <p>Precision in every base.</p>
+        <div className="flex items-center gap-6">
+          <a
+            data-testid="footer-privacy-link"
+            href="/privacy-policy"
+            className="transition-colors duration-200 hover:text-brand"
+          >
+            Privacy policy
+          </a>
+          <p>Precision in every base.</p>
+        </div>
       </div>
     </div>
   </footer>
