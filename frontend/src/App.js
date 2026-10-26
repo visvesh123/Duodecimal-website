@@ -10,6 +10,7 @@ import ClientStory from "@/pages/ClientStory";
 import Products from "@/pages/Products";
 import ProductPage from "@/pages/ProductPage";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import ContactPage from "@/pages/ContactPage";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import AdminLogin from "@/pages/AdminLogin";
@@ -55,6 +56,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/products/:slug" element={<ProductPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/admin/login" element={<AdminLogin />} />
